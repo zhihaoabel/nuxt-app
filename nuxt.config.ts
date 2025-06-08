@@ -22,7 +22,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     'nuxt-component-meta',
     '@nuxtjs/color-mode',
-    '@nuxtjs/mdc'
+    '@nuxtjs/mdc',
+    '@nuxthq/studio'
   ],
 
   // 组件自动导入配置
