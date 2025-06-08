@@ -1,0 +1,198 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Tailwind CSS Integration Guide
+
+This project uses Tailwind CSS as the primary styling framework, integrated with Nuxt UI Pro components.
+
+## Setup & Configuration
+
+### Main CSS File
+- [assets/css/main.css](mdc:assets/css/main.css) - Main stylesheet with Tailwind imports
+- Import order:
+  1. `@import "tailwindcss"` - Core Tailwind CSS
+  2. `@import "@nuxt/ui-pro"` - UI Pro component styles
+  3. Custom CSS variables and utilities
+
+### Integration with Nuxt
+- CSS file imported in [nuxt.config.ts](mdc:nuxt.config.ts): `css: ['~/assets/css/main.css']`
+- Typography plugin enabled via `@tailwindcss/typography`
+- Auto-processing of Tailwind classes in development and build
+
+## Custom CSS Variables
+
+### Theme Variables
+```css
+:root {
+  --ui-primary: #533afd;        /* Primary color */
+  --ui-radius: 0.25rem;         /* Border radius */
+  --ui-container: 90rem;        /* Container max-width */
+  --header-offset: 8rem;        /* Header height offset */
+}
+
+.dark {
+  --ui-primary: #7c6aff;        /* Dark mode primary */
+}
+```
+
+### Usage in Components
+- Reference variables in Tailwind classes or custom CSS
+- Automatic updates when theme changes via [components/AdvancedThemeConfigurator.vue](mdc:components/AdvancedThemeConfigurator.vue)
+
+## Custom Utility Classes
+
+### Shadow Effects
+```css
+.shadow-glow {
+  /* Primary color glow effect */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -1px rgba(0, 0, 0, 0.06),
+              0 0 20px rgba(var(--ui-primary), 0.15);
+}
+
+.shadow-glow-lg {
+  /* Large primary color glow */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05),
+              0 0 30px rgba(var(--ui-primary), 0.2);
+}
+
+.shadow-soft {
+  /* Soft neutral shadow */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08),
+              0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-soft-lg {
+  /* Large soft shadow */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1),
+              0 5px 15px rgba(0, 0, 0, 0.05);
+}
+```
+
+### Hover Animations
+```css
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+```
+
+### Gradient Borders
+```css
+.gradient-border {
+  position: relative;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(45deg, #667eea, #764ba2) border-box;
+  border: 2px solid transparent;
+}
+
+.dark .gradient-border {
+  background: linear-gradient(rgb(31, 41, 55), rgb(31, 41, 55)) padding-box,
+              linear-gradient(45deg, #667eea, #764ba2) border-box;
+}
+```
+
+## Component Styling Patterns
+
+### Responsive Design
+From [components/AdvancedThemeConfigurator.vue](mdc:components/AdvancedThemeConfigurator.vue):
+```vue
+<!-- Responsive grid layouts -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+  <!-- Responsive: 2 cols on mobile, 3 on small screens+ -->
+</div>
+
+<!-- Responsive sizing -->
+<UCard class="w-full sm:w-96">
+  <!-- Full width on mobile, fixed width on small screens+ -->
+</UCard>
+```
+
+### Dark Mode Support
+```vue
+<!-- Dark mode variants -->
+<div class="bg-white dark:bg-gray-800">
+  <h3 class="text-gray-900 dark:text-gray-100">
+    <!-- Light/dark text colors -->
+  </h3>
+  <div class="border-gray-200 dark:border-gray-700">
+    <!-- Light/dark borders -->
+  </div>
+</div>
+```
+
+### Component Spacing
+```vue
+<!-- Consistent spacing patterns -->
+<div class="space-y-6">        <!-- Vertical spacing between children -->
+  <div class="space-y-4">      <!-- Smaller vertical spacing -->
+    <div class="flex space-x-2"> <!-- Horizontal spacing -->
+```
+
+## Nuxt UI Integration
+
+### Component Styling
+- Nuxt UI components automatically inherit Tailwind classes
+- Custom styling via class props:
+```vue
+<UButton class="justify-start h-8 min-w-0">
+<UCard class="shadow-lg border border-gray-200 dark:border-gray-700">
+```
+
+### Color System
+- Primary colors: `color="primary"`, `color="neutral"`
+- Variants: `variant="solid"`, `variant="outline"`, `variant="ghost"`
+- Size options: `size="sm"`, `size="md"`, `size="lg"`
+
+## Best Practices
+
+### Class Organization
+1. Layout classes first: `flex`, `grid`, `w-full`
+2. Spacing: `p-4`, `m-2`, `space-y-4`
+3. Typography: `text-lg`, `font-semibold`
+4. Colors: `text-gray-900`, `bg-white`
+5. Effects: `shadow-lg`, `hover:shadow-xl`
+6. Responsive: `sm:w-96`, `md:grid-cols-3`
+7. Dark mode: `dark:bg-gray-800`, `dark:text-gray-100`
+
+### Performance Considerations
+- Use Tailwind's purge functionality (automatic in Nuxt)
+- Prefer utility classes over custom CSS
+- Leverage component composition for repeated patterns
+
+### Accessibility
+- Use semantic color names: `text-red-500` for errors
+- Ensure sufficient contrast ratios
+- Test dark mode variants for accessibility
+
+## Development Workflow
+
+### Live Reloading
+- Tailwind classes are processed in real-time during development
+- Changes to [assets/css/main.css](mdc:assets/css/main.css) trigger hot reload
+- Custom utility classes are immediately available
+
+### Debugging
+- Use browser dev tools to inspect generated CSS
+- Tailwind CSS IntelliSense extension for VS Code
+- Check class application in component templates
+
+## Migration & Updates
+
+### Tailwind CSS v4 Compatibility
+- Project follows Tailwind CSS v4 patterns
+- Uses `@import "tailwindcss"` syntax
+- Compatible with Nuxt UI Pro v3
+
+### Customization
+- Extend utility classes in [assets/css/main.css](mdc:assets/css/main.css)
+- Use CSS custom properties for theme variables
+- Follow existing patterns for consistency

@@ -1,0 +1,96 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Nuxt.js Project Structure Guide
+
+This is a modern Nuxt 3 application with content management capabilities, UI Pro components, and Tailwind CSS styling.
+
+## Core Configuration Files
+
+- [nuxt.config.ts](mdc:nuxt.config.ts) - Main Nuxt configuration with modules, content, and theming setup
+- [package.json](mdc:package.json) - Dependencies and scripts
+- [app.config.ts](mdc:app.config.ts) - Application-specific configuration
+- [content.config.ts](mdc:content.config.ts) - Content module configuration
+- [tsconfig.json](mdc:tsconfig.json) - TypeScript configuration
+
+## Directory Structure
+
+### Pages & Routing
+- [pages/](mdc:pages) - File-based routing with Vue components
+- [pages/index.vue](mdc:pages/index.vue) - Homepage (748 lines, main landing page)
+- [pages/content.vue](mdc:pages/content.vue) - Content display page
+- [pages/get-started/](mdc:pages/get-started) - Getting started section
+
+### Components
+- [components/](mdc:components) - Auto-imported Vue components
+- [components/global/](mdc:components/global) - Globally available components
+- [components/AdvancedThemeConfigurator.vue](mdc:components/AdvancedThemeConfigurator.vue) - Advanced theme configuration component (202 lines)
+- [components/ExampleComponent.vue](mdc:components/ExampleComponent.vue) - Example component demonstrating UI patterns (86 lines)
+
+### Content Management
+- [content/](mdc:content) - Markdown content files for @nuxt/content
+- [content/index.md](mdc:content/index.md) - Main content page
+- [content/get-started/](mdc:content/get-started) - Getting started documentation
+
+### Assets & Styling
+- [assets/css/](mdc:assets/css) - Stylesheets and CSS files
+- [assets/css/main.css](mdc:assets/css/main.css) - Main CSS file with Tailwind imports and custom styles
+- [public/images/](mdc:public/images) - Static images and assets
+- [public/](mdc:public) - Static files served directly
+
+### Application Logic
+- [composables/](mdc:composables) - Vue composables for shared logic
+- [plugins/](mdc:plugins) - Nuxt plugins
+- [utils/](mdc:utils) - Utility functions
+- [server/](mdc:server) - Server-side code and API routes
+- [layouts/](mdc:layouts) - Layout components
+
+## Key Technologies & Modules
+
+### UI & Styling
+- **@nuxt/ui-pro** - Professional UI components library
+- **Tailwind CSS** - Utility-first CSS framework (imported in main.css)
+- **@tailwindcss/typography** - Typography plugin for content styling
+- **@nuxtjs/color-mode** - Dark/light mode support with system preference detection
+
+### Content Management
+- **@nuxt/content** - File-based CMS with Markdown support
+- **@nuxtjs/mdc** - Markdown component rendering with Vue components in Markdown
+- **Shiki** - Syntax highlighting for code blocks
+
+### Development Tools
+- **@nuxt/image** - Optimized image handling and processing
+- **@nuxt/icon** - Icon management system
+- **nuxt-component-meta** - Component metadata extraction
+- **TypeScript** - Type safety with vue-tsc
+
+## CSS Architecture
+
+### Tailwind CSS Integration
+- Main import: `@import "tailwindcss"` in [assets/css/main.css](mdc:assets/css/main.css)
+- UI Pro styles: `@import "@nuxt/ui-pro"`
+- Custom CSS variables for theming and spacing
+- Custom utility classes for shadows, animations, and effects
+
+### Custom Styling Features
+- CSS custom properties for theming (`--ui-primary`, `--ui-radius`)
+- Custom shadow effects (`.shadow-glow`, `.shadow-soft`)
+- Hover animations (`.hover-lift`)
+- Gradient borders (`.gradient-border`)
+- Responsive design with dark mode support
+
+## Development Commands
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run generate` - Generate static site
+- `npm run preview` - Preview production build
+
+## Official Documentation References
+
+- **Nuxt 3**: https://nuxt.com/docs - Core framework documentation
+- **Nuxt UI**: https://ui.nuxt.com - UI component library documentation
+- **Nuxt Content**: https://content.nuxt.com - Content management documentation
+- **Tailwind CSS**: https://tailwindcss.com - Utility-first CSS framework

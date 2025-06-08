@@ -1,0 +1,38 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Cursor Rules Index
+
+This directory contains comprehensive rules for the Nuxt.js project with Tailwind CSS and UI Pro components.
+
+## Available Rules
+
+- [nuxt-project-structure.mdc](mdc:.cursor/rules/nuxt-project-structure.mdc) - Complete project structure and file organization guide
+- [nuxt-development-guidelines.mdc](mdc:.cursor/rules/nuxt-development-guidelines.mdc) - Development workflows and best practices
+- [vue-component-patterns.mdc](mdc:.cursor/rules/vue-component-patterns.mdc) - Vue component patterns and conventions
+- [tailwind-css-guide.mdc](mdc:.cursor/rules/tailwind-css-guide.mdc) - Tailwind CSS integration and styling guide
+- [strict-operational-protocol.mdc](mdc:.cursor/rules/strict-operational-protocol.mdc) - RIPER-5 operational protocol
+
+## Quick Reference
+
+### Key Files
+- [nuxt.config.ts](mdc:nuxt.config.ts) - Main configuration with modules and theming
+- [assets/css/main.css](mdc:assets/css/main.css) - Tailwind CSS imports and custom styles
+- [pages/index.vue](mdc:pages/index.vue) - Homepage (748 lines)
+
+### Current Components
+- [components/AdvancedThemeConfigurator.vue](mdc:components/AdvancedThemeConfigurator.vue) - Theme configuration (202 lines)
+- [components/ExampleComponent.vue](mdc:components/ExampleComponent.vue) - UI component showcase (86 lines)
+
+### Development Commands
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run generate` - Generate static site
+
+### Official Documentation
+- **Nuxt 3**: https://nuxt.com/docs
+- **Nuxt UI**: https://ui.nuxt.com
+- **Nuxt Content**: https://content.nuxt.com
+- **Tailwind CSS**: https://tailwindcss.com

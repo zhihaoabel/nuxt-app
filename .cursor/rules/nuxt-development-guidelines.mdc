@@ -1,0 +1,146 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Nuxt.js Development Guidelines
+
+## Component Development
+
+### Auto-Import System
+- Components in [components/](mdc:components) are automatically imported
+- Use PascalCase for component names
+- Global components go in [components/global/](mdc:components/global)
+- Follow the existing pattern seen in [components/AdvancedThemeConfigurator.vue](mdc:components/AdvancedThemeConfigurator.vue)
+
+### UI Pro Components
+- This project uses @nuxt/ui-pro for professional UI components
+- Leverage existing UI components before creating custom ones
+- Theme configuration is handled by [components/AdvancedThemeConfigurator.vue](mdc:components/AdvancedThemeConfigurator.vue)
+- Reference [components/ExampleComponent.vue](mdc:components/ExampleComponent.vue) for UI component usage patterns
+
+### Component Examples
+- [components/AdvancedThemeConfigurator.vue](mdc:components/AdvancedThemeConfigurator.vue) - Complex theme configuration with color, radius, and mode selection (202 lines)
+- [components/ExampleComponent.vue](mdc:components/ExampleComponent.vue) - Demonstrates various UI components: buttons, icons, inputs, cards, notifications (86 lines)
+
+## Content Management
+
+### Markdown Content
+- Content files are stored in [content/](mdc:content)
+- Use @nuxt/content for content management
+- MDC (Markdown Components) is enabled in [nuxt.config.ts](mdc:nuxt.config.ts)
+- Content configuration is in [content.config.ts](mdc:content.config.ts)
+- Supports Vue components in Markdown files with MDC syntax
+
+### Content Structure
+- Main content index: [content/index.md](mdc:content/index.md)
+- Organized by sections: [content/get-started/](mdc:content/get-started)
+- Content pages are rendered via [pages/content.vue](mdc:pages/content.vue)
+
+### Content Features
+- Table of contents generation (depth: 5, searchDepth: 3)
+- Syntax highlighting with Shiki (themes: slack-ochin, slack-dark)
+- Emoji support with remark-emoji plugin
+- Anchor links for headings (h2-h6)
+
+## Styling & Theming
+
+### Tailwind CSS Integration
+- Main CSS file: [assets/css/main.css](mdc:assets/css/main.css)
+- Imports: `@import "tailwindcss"` and `@import "@nuxt/ui-pro"`
+- Typography plugin enabled for content styling
+- Custom utility classes for enhanced styling
+
+### Custom CSS Features
+- CSS custom properties for theming:
+  - `--ui-primary`: Primary color variable
+  - `--ui-radius`: Border radius variable
+  - `--header-offset`: Header height offset for scroll positioning
+- Custom shadow effects: `.shadow-glow`, `.shadow-soft`, `.shadow-glow-lg`, `.shadow-soft-lg`
+- Hover animations: `.hover-lift` with transform and shadow transitions
+- Gradient borders: `.gradient-border` with dual background gradients
+
+### Color Mode Support
+- Dark/light mode is configured in [nuxt.config.ts](mdc:nuxt.config.ts)
+- Uses @nuxtjs/color-mode with system preference detection
+- Theme switching handled by [components/AdvancedThemeConfigurator.vue](mdc:components/AdvancedThemeConfigurator.vue)
+- Automatic CSS variable updates for dark mode
+
+### Styling Best Practices
+- Use Tailwind utility classes for rapid development
+- Leverage custom CSS variables for consistent theming
+- Follow the existing shadow and animation patterns
+- Ensure dark mode compatibility for all custom styles
+
+## TypeScript Configuration
+
+### Type Safety
+- TypeScript type checking is enabled in [nuxt.config.ts](mdc:nuxt.config.ts)
+- Configuration in [tsconfig.json](mdc:tsconfig.json)
+- Use proper typing for Vue components and composables
+- vue-tsc for Vue-specific type checking
+
+## File Organization Patterns
+
+### Pages
+- File-based routing in [pages/](mdc:pages)
+- Main landing page: [pages/index.vue](mdc:pages/index.vue) (748 lines)
+- Content display: [pages/content.vue](mdc:pages/content.vue)
+
+### Composables
+- Shared logic in [composables/](mdc:composables)
+- Follow Vue 3 Composition API patterns
+- Auto-imported by Nuxt
+- Theme configuration composable used in AdvancedThemeConfigurator
+
+### Utilities
+- Helper functions in [utils/](mdc:utils)
+- Keep utilities focused and reusable
+
+## Development Workflow
+
+### Local Development
+- Use `npm run dev` for development server
+- Hot reload is enabled for all file types
+- DevTools are enabled in [nuxt.config.ts](mdc:nuxt.config.ts)
+- Tailwind CSS classes are processed in real-time
+
+### Building & Deployment
+- `npm run build` for production build
+- `npm run generate` for static site generation
+- `npm run preview` to preview production build
+
+## Best Practices
+
+### Component Naming
+- Use PascalCase for component files
+- Descriptive names (e.g., AdvancedThemeConfigurator, ExampleComponent)
+- Group related components in subdirectories
+
+### Content Organization
+- Organize content by feature/section
+- Use meaningful directory names
+- Keep markdown files focused and well-structured
+- Leverage MDC syntax for interactive content
+
+### Configuration Management
+- Keep configuration centralized in config files
+- Use [app.config.ts](mdc:app.config.ts) for app-specific settings
+- Module configuration in [nuxt.config.ts](mdc:nuxt.config.ts)
+
+## Official Documentation & Resources
+
+### Core Documentation
+- **Nuxt 3 Guide**: https://nuxt.com/docs/guide - Complete framework documentation
+- **Nuxt Directory Structure**: https://nuxt.com/docs/guide/directory-structure - File organization guide
+- **Nuxt TypeScript**: https://nuxt.com/docs/guide/concepts/typescript - TypeScript integration
+
+### UI & Styling
+- **Nuxt UI Documentation**: https://ui.nuxt.com - Component library and usage
+- **Nuxt UI Migration**: https://ui.nuxt.com/getting-started/migration - v2 to v3 migration guide
+- **Tailwind CSS**: https://tailwindcss.com/docs - Utility-first CSS framework
+
+### Content Management
+- **Nuxt Content**: https://content.nuxt.com - File-based CMS documentation
+- **MDC Syntax**: https://content.nuxt.com/usage/markdown - Markdown components syntax
+- **Content Directory**: https://nuxt.com/docs/guide/directory-structure/content - Content structure guide
