@@ -66,7 +66,8 @@ export default defineNuxtConfig({
       }
     },
     preview: {
-      api: 'https://api.nuxt.studio'
+      api: 'https://api.nuxt.studio',
+      dev: true
     }
   },
 
