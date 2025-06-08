@@ -3,6 +3,17 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
 
+  nitro: {
+    prerender: {
+      routes: [
+        // Include other routes but exclude problematic ones
+        '/revenue',
+        '/webhooks',
+      ],
+      ignore: ['/revenue', '/webhooks'], // Exclude problematic routes
+    },
+  },
+
   // 模块配置
   modules: [
     '@nuxt/image',

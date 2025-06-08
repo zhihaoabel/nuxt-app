@@ -266,8 +266,8 @@ const paymentIntent = await onerway.paymentIntents.create({
 
 ## 下一步
 
-- [API 参考](./api-reference) - 完整的 API 文档
-- [集成指南](./integration-guide) - 详细的集成步骤
-- [测试指南](./testing) - 测试环境和测试卡
-- [Webhooks](./webhooks) - 事件通知配置
-- [最佳实践](./best-practices) - 开发建议和优化技巧
+- [API 参考](./) - 完整的 API 文档
+- [集成指南](./) - 详细的集成步骤
+- [测试指南](./) - 测试环境和测试卡
+- [Webhooks](./) - 事件通知配置
+- [最佳实践](./) - 开发建议和优化技巧

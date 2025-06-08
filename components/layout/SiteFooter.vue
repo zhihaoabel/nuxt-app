@@ -78,11 +78,11 @@
             <span>© {{ new Date().getFullYear() }} Onerway DOCS</span>
           </div>
           <div class="flex justify-center space-x-4 text-xs">
-            <ULink to="/privacy"
+            <ULink to="/"
               class="transition-colors" :class="[mutedTextColorStyle, linkHoverColorStyle]">
               隐私政策
             </ULink>
-            <ULink to="/terms"
+            <ULink to="/"
               class="transition-colors" :class="[mutedTextColorStyle, linkHoverColorStyle]">
               服务条款
             </ULink>
@@ -196,15 +196,15 @@
               <span>© {{ new Date().getFullYear() }} Onerway DOCS. 用心构建，保留所有权利。</span>
             </div>
             <div class="flex items-center space-x-6">
-              <ULink to="/privacy"
+              <ULink to="/"
                 class="text-sm transition-colors duration-200" :class="[textColorStyle, linkHoverColorStyle]">
                 隐私政策
               </ULink>
-              <ULink to="/terms"
+              <ULink to="/"
                 class="text-sm transition-colors duration-200" :class="[textColorStyle, linkHoverColorStyle]">
                 服务条款
               </ULink>
-              <ULink to="/cookies"
+              <ULink to="/"
                 class="text-sm transition-colors duration-200" :class="[textColorStyle, linkHoverColorStyle]">
                 Cookie 政策
               </ULink>
