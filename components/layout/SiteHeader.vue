@@ -2,7 +2,7 @@
   <header class="sticky flex flex-col justify-center h-[var(--ui-header-height)] top-0 z-50 bg-default shadow-md border-b" :class="borderColorStyle">
     <!-- 上层：Logo 和工具按钮 -->
     <div class="">
-      <UContainer>
+      <UContainer class="max-w-full">
         <div class="flex items-center justify-between h-full">
           <!-- Logo 区域 -->
           <div class="flex items-center space-x-3">
@@ -166,12 +166,19 @@ const toggleThemeConfigurator = () => {
   showThemeConfigurator.value = !showThemeConfigurator.value
 }
 
-// 点击外部关闭移动菜单
+// 点击外部关闭移动菜单和主题配置器
 onMounted(() => {
   const handleClickOutside = (event: Event) => {
     const target = event.target as Element
+    
+    // 关闭移动菜单
     if (!target.closest('[data-mobile-menu-button]') && !target.closest('[data-mobile-menu-panel]')) {
       showMobileMenu.value = false
+    }
+    
+    // 关闭主题配置器
+    if (!target.closest('.theme-configurator-button') && !target.closest('.theme-configurator-panel')) {
+      showThemeConfigurator.value = false
     }
   }
 

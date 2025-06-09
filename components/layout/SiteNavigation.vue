@@ -1,6 +1,6 @@
 <template>
   <div class="hidden md:block ">
-    <UContainer>
+    <UContainer class="max-w-full">
       <div class="h-full flex items-center">
         <UNavigationMenu :items="navigationItems" disableHoverTrigger disablePointerLeaveClose
           orientation="horizontal" content-orientation="vertical" highlight-color="primary"
