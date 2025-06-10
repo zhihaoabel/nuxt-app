@@ -1,5 +1,5 @@
 <template>
-  <div>
+          <div>
     <UContainer class="max-w-7xl mx-auto">
       <div class="py-12 space-y-12">
         <!-- 文档页面主要内容 -->
@@ -27,6 +27,16 @@
                   :to="{ hash: '#browse-by-product' }"
                   class="px-8 py-4 text-lg font-semibold underline decoration-2 underline-offset-4">
                   Explore all products
+                </UButton>
+                <UButton size="lg" variant="outline" color="primary" icon="i-heroicons-language" 
+                  to="/font-demo"
+                  class="px-8 py-4 text-lg font-semibold">
+                  系统字体演示 Font Demo
+                </UButton>
+                <UButton size="lg" variant="ghost" color="neutral" icon="i-heroicons-beaker" 
+                  to="/font-test"
+                  class="px-8 py-4 text-lg font-semibold">
+                  字体全场景测试 Font Test
                 </UButton>
               </div>
 
@@ -83,8 +93,8 @@
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                       Build and scale your recurring business model.
-                    </p>
-                  </div>
+            </p>
+          </div>
                 </UCard>
 
                 <!-- Terminal 卡片 -->
@@ -105,9 +115,9 @@
                     </p>
                   </div>
                 </UCard>
-              </div>
+                </div>
             </div>
-
+            
             <!-- 右侧边栏 -->
             <div class="lg:col-span-1">
               <!-- 最近查看 -->
@@ -131,8 +141,8 @@
                       class="w-full justify-start text-left p-1 hover:bg-gray-50 dark:hover:bg-gray-800"
                       @click="handleRecentClick('testing')">
                       Testing
-                    </UButton>
-                  </div>
+            </UButton>
+          </div>
                   <div class="py-2">
                     <UButton variant="link" color="primary" size="sm" class="p-0.5 hover:underline"
                       @click="handleSignIn">
@@ -144,8 +154,8 @@
                       create an account
                     </UButton>
                     <span class="text-gray-600 dark:text-gray-400 text-sm">to load your test API keys.</span>
-                  </div>
-                </div>
+        </div>
+      </div>
               </UCard>
 
               <!-- 测试信用卡 -->
@@ -165,8 +175,8 @@
                   <div class="mb-4 text-left">
                     <p class="text-xs text-gray-600 dark:text-gray-400">
                       Click to view more test cards
-                    </p>
-                  </div>
+        </p>
+      </div>
 
                   <!-- 信用卡视觉设计 -->
                   <div class="relative ">
@@ -256,104 +266,104 @@
                   borderRadius: 'var(--ui-radius, 0.5rem)'
                 }">
                   <UIcon name="i-heroicons-swatch" class="w-5 h-5 transition-all duration-300 text-white" />
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                  颜色配置
-                </h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-400">
-                支持 18 种主色调和 5 种中性色的选择，实时预览颜色变化效果。
-              </p>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              颜色配置
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400">
+            支持 18 种主色调和 5 种中性色的选择，实时预览颜色变化效果。
+          </p>
             </UCard>
 
             <!-- 圆角调整卡片 -->
             <UCard class="hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
               @click="handleFeatureClick('radius')">
-              <div class="flex items-center space-x-3 mb-4">
+          <div class="flex items-center space-x-3 mb-4">
                 <div class="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center">
                   <UIcon name="i-heroicons-squares-2x2" class="w-5 h-5 text-green-600 dark:text-green-400" />
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                  圆角调整
-                </h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-400">
-                通过滑块或快捷按钮调整圆角半径，从 0 到 0.5rem 的精确控制。
-              </p>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              圆角调整
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400">
+            通过滑块或快捷按钮调整圆角半径，从 0 到 0.5rem 的精确控制。
+          </p>
             </UCard>
 
             <!-- 主题模式卡片 -->
             <UCard class="hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
               @click="handleFeatureClick('theme')">
-              <div class="flex items-center space-x-3 mb-4">
+          <div class="flex items-center space-x-3 mb-4">
                 <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center">
                   <UIcon name="i-heroicons-moon" class="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                  主题模式
-                </h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-400">
-                支持浅色、深色和系统自动模式，无缝切换不同主题风格。
-              </p>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              主题模式
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400">
+            支持浅色、深色和系统自动模式，无缝切换不同主题风格。
+          </p>
             </UCard>
 
             <!-- 实时预览卡片 -->
             <UCard class="hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
               @click="handleFeatureClick('preview')">
-              <div class="flex items-center space-x-3 mb-4">
+          <div class="flex items-center space-x-3 mb-4">
                 <div class="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-xl flex items-center justify-center">
                   <UIcon name="i-heroicons-eye" class="w-5 h-5 text-orange-600 dark:text-orange-400" />
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                  实时预览
-                </h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-400">
-                所有配置更改都会实时反映在页面元素上，提供即时的视觉反馈。
-              </p>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              实时预览
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400">
+            所有配置更改都会实时反映在页面元素上，提供即时的视觉反馈。
+          </p>
             </UCard>
 
             <!-- 配置导出卡片 -->
             <UCard class="hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
               @click="handleFeatureClick('export')">
-              <div class="flex items-center space-x-3 mb-4">
+          <div class="flex items-center space-x-3 mb-4">
                 <div class="w-10 h-10 bg-red-100 dark:bg-red-900 rounded-xl flex items-center justify-center">
                   <UIcon name="i-heroicons-clipboard-document" class="w-5 h-5 text-red-600 dark:text-red-400" />
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                  配置导出
-                </h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-400">
-                一键复制当前主题配置到剪贴板，方便在其他项目中使用。
-              </p>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              配置导出
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400">
+            一键复制当前主题配置到剪贴板，方便在其他项目中使用。
+          </p>
             </UCard>
 
             <!-- 重置功能卡片 -->
             <UCard class="hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
               @click="handleFeatureClick('reset')">
-              <div class="flex items-center space-x-3 mb-4">
+          <div class="flex items-center space-x-3 mb-4">
                 <div class="w-10 h-10 bg-teal-100 dark:bg-teal-900 rounded-xl flex items-center justify-center">
                   <UIcon name="i-heroicons-arrow-path" class="w-5 h-5 text-teal-600 dark:text-teal-400" />
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                  重置功能
-                </h3>
-              </div>
-              <p class="text-gray-600 dark:text-gray-400">
-                快速重置所有配置到默认状态，方便重新开始配置。
-              </p>
-            </UCard>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              重置功能
+            </h3>
           </div>
+          <p class="text-gray-600 dark:text-gray-400">
+            快速重置所有配置到默认状态，方便重新开始配置。
+          </p>
+            </UCard>
+        </div>
         </UContainer>
 
-        <!-- 演示链接 -->
+      <!-- 演示链接 -->
         <UContainer>
-          <div class="text-center">
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8">
-              在线演示
-            </h3>
+      <div class="text-center">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8">
+          在线演示
+        </h3>
 
             <!-- 特色卡片 - 带外层阴影 -->
             <div class="mb-12 flex justify-center">
@@ -396,71 +406,71 @@
               </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              <!-- 基础版本 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <!-- 基础版本 -->
               <UCard class="hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
                 @click="handleDemoClick('basic')">
                 <div class="p-8">
-                  <div class="mb-6">
-                    <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                      基础主题配置器
-                    </h4>
-                    <p class="text-gray-600 dark:text-gray-400">
-                      基本的主题配置功能，包含颜色选择、圆角调整和主题切换。
-                    </p>
-                  </div>
-                  <div class="flex flex-col space-y-3">
+            <div class="mb-6">
+              <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                基础主题配置器
+              </h4>
+              <p class="text-gray-600 dark:text-gray-400">
+                基本的主题配置功能，包含颜色选择、圆角调整和主题切换。
+              </p>
+            </div>
+            <div class="flex flex-col space-y-3">
                     <UButton color="primary" size="lg" block icon="i-heroicons-eye"
                       @click.stop="handleDemoClick('basic')">
-                      查看基础演示
-                    </UButton>
-                    <div class="flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-                      <span class="flex items-center space-x-1">
+                查看基础演示
+              </UButton>
+              <div class="flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
+                <span class="flex items-center space-x-1">
                         <UIcon name="i-heroicons-check" class="w-4 h-4" />
-                        <span>颜色配置</span>
-                      </span>
-                      <span class="flex items-center space-x-1">
+                  <span>颜色配置</span>
+                </span>
+                <span class="flex items-center space-x-1">
                         <UIcon name="i-heroicons-check" class="w-4 h-4" />
-                        <span>主题切换</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                  <span>主题切换</span>
+                </span>
+              </div>
+            </div>
+          </div>
               </UCard>
 
-              <!-- 高级版本 -->
+          <!-- 高级版本 -->
               <UCard class="hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
                 @click="handleDemoClick('advanced')">
                 <div class="p-8">
-                  <div class="mb-6">
-                    <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                      高级主题配置器
-                    </h4>
-                    <p class="text-gray-600 dark:text-gray-400">
-                      完整功能的主题配置器，包含实时预览、配置导出和重置功能。
-                    </p>
-                  </div>
-                  <div class="flex flex-col space-y-3">
+            <div class="mb-6">
+              <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                高级主题配置器
+              </h4>
+              <p class="text-gray-600 dark:text-gray-400">
+                完整功能的主题配置器，包含实时预览、配置导出和重置功能。
+              </p>
+            </div>
+            <div class="flex flex-col space-y-3">
                     <UButton color="primary" size="lg" block icon="i-heroicons-sparkles"
                       @click.stop="handleDemoClick('advanced')">
-                      查看高级演示
-                    </UButton>
-                    <div class="flex flex-wrap gap-2 text-sm text-gray-500 dark:text-gray-400">
-                      <span class="flex items-center space-x-1">
+                查看高级演示
+              </UButton>
+              <div class="flex flex-wrap gap-2 text-sm text-gray-500 dark:text-gray-400">
+                <span class="flex items-center space-x-1">
                         <UIcon name="i-heroicons-check" class="w-4 h-4" />
-                        <span>实时预览</span>
-                      </span>
-                      <span class="flex items-center space-x-1">
+                  <span>实时预览</span>
+                </span>
+                <span class="flex items-center space-x-1">
                         <UIcon name="i-heroicons-check" class="w-4 h-4" />
-                        <span>配置导出</span>
-                      </span>
-                      <span class="flex items-center space-x-1">
+                  <span>配置导出</span>
+                </span>
+                <span class="flex items-center space-x-1">
                         <UIcon name="i-heroicons-check" class="w-4 h-4" />
-                        <span>重置功能</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                  <span>重置功能</span>
+                </span>
+              </div>
+            </div>
+          </div>
               </UCard>
 
               <!-- 第三个卡片 - 带特殊效果 -->
@@ -504,9 +514,9 @@
                     </div>
                   </div>
                 </UCard>
-              </div>
-            </div>
-          </div>
+        </div>
+      </div>
+        </div>
         </UContainer>
       </div>
     </UContainer>
@@ -836,4 +846,4 @@ useSeoMeta({
   title: 'Nuxt UI 主题配置器演示',
   description: '仿照 Nuxt UI 官网的主题配置组件实现，支持实时预览和配置导出'
 })
-</script>
+</script> 

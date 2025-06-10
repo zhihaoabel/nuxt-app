@@ -1,13 +1,15 @@
 <template>
-  <header class="sticky flex flex-col justify-center h-[var(--ui-header-height)] top-0 z-50 bg-default shadow-md border-b" :class="borderColorStyle">
+  <header
+    class="sticky flex flex-col justify-center h-[var(--ui-header-height)] top-0 z-50 bg-default shadow-md border-b"
+    :class="borderColorStyle">
     <!-- 上层：Logo 和工具按钮 -->
     <div class="">
       <UContainer class="max-w-full">
         <div class="flex items-center justify-between h-full">
           <!-- Logo 区域 -->
           <div class="flex items-center space-x-3">
-            <div
-              class="w-8 h-8 bg-gradient-to-br rounded-lg flex items-center justify-center" :class="logoGradientStyle">
+            <div class="w-8 h-8 bg-gradient-to-br rounded-lg flex items-center justify-center"
+              :class="logoGradientStyle">
               <UIcon name="i-heroicons-document-text" class="w-5 h-5 text-white" />
             </div>
             <div class="hover:cursor-pointer" @click="navigateTo('/')">
@@ -54,14 +56,13 @@
     <SiteNavigation :navigation-items="navigationItems" />
   </header>
 
-            <!-- 移动端菜单 (独立的overlay) -->
+  <!-- 移动端菜单 (独立的overlay) -->
   <Transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 -translate-y-2"
     enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
     leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-2">
     <div v-if="showMobileMenu"
       class="fixed top-[var(--ui-header-height)] left-0 right-0 z-40 md:hidden border-t bg-inherit shadow-lg"
-      :class="borderColorStyle"
-      data-mobile-menu-panel>
+      :class="borderColorStyle" data-mobile-menu-panel>
       <UContainer>
         <div class="py-4">
           <UNavigationMenu :items="[allNavigationItems]" orientation="vertical" color="neutral" variant="link"
@@ -114,7 +115,7 @@ const logoGradientStyle = computed(() => {
     rose: 'from-rose-500 to-rose-600',
     custom: 'from-blue-500 to-purple-600'
   }
-  
+
   return colorMap[primaryColor] || 'from-blue-500 to-purple-600'
 })
 
@@ -127,7 +128,7 @@ const borderColorStyle = computed(() => {
     neutral: 'border-neutral-200 dark:border-neutral-700',
     stone: 'border-stone-200 dark:border-stone-700'
   }
-  
+
   return colorMap[neutralColor] || 'border-gray-200 dark:border-gray-700'
 })
 
@@ -140,7 +141,7 @@ const headingColorStyle = computed(() => {
     neutral: 'text-neutral-900 dark:text-neutral-100',
     stone: 'text-stone-900 dark:text-stone-100'
   }
-  
+
   return colorMap[neutralColor] || 'text-gray-900 dark:text-gray-100'
 })
 
@@ -170,12 +171,12 @@ const toggleThemeConfigurator = () => {
 onMounted(() => {
   const handleClickOutside = (event: Event) => {
     const target = event.target as Element
-    
+
     // 关闭移动菜单
     if (!target.closest('[data-mobile-menu-button]') && !target.closest('[data-mobile-menu-panel]')) {
       showMobileMenu.value = false
     }
-    
+
     // 关闭主题配置器
     if (!target.closest('.theme-configurator-button') && !target.closest('.theme-configurator-panel')) {
       showThemeConfigurator.value = false

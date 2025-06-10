@@ -12,6 +12,7 @@ export default defineNuxtConfig({
       ],
       ignore: ['/revenue', '/webhooks'], // Exclude problematic routes
     },
+    minify: true,
   },
 
   // 模块配置
@@ -22,7 +23,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     'nuxt-component-meta',
     '@nuxtjs/color-mode',
-    '@nuxtjs/mdc'
+    '@nuxtjs/mdc',
+    '@nuxtjs/google-fonts'
   ],
 
   // 组件自动导入配置
@@ -34,7 +36,30 @@ export default defineNuxtConfig({
   ],
 
   ui: {
-    fonts: true,
+    fonts: true, // 启用字体支持
+  },
+
+  googleFonts: {
+    families: {
+      // 核心英文字体
+      Inter: [300, 400, 500, 600, 700], // 主要无衬线字体
+      'Crimson Pro': [400, 500, 600, 700], // 主要衬线字体
+      
+      // 核心中文字体
+      'Noto Sans SC': [300, 400, 500, 700], // 简体中文无衬线
+      'Noto Sans TC': [400, 500, 700], // 繁体中文无衬线
+      'Noto Serif SC': [400, 500, 700], // 简体中文衬线
+      'Source Han Sans': [400, 500, 700], // 思源黑体
+      
+      // Emoji 和符号字体支持
+      'Noto Color Emoji': true, // Emoji 字体
+    },
+    // 字体显示策略
+    display: 'swap',
+    // 预连接到字体服务器
+    preconnect: true,
+    // 子集化优化
+    subsets: ['latin', 'latin-ext', 'chinese-simplified', 'chinese-traditional'],
   },
 
   mdc: {
@@ -45,17 +70,11 @@ export default defineNuxtConfig({
     highlight: {
       highlighter: 'shiki',
       theme: {
-        default: 'slack-ochin',
-        dark: 'slack-dark',
-        light: 'slack-ochin',
+        default: 'light-plus',
+        dark: 'dracula',
+        light: 'catppuccin-latte',
       },
     },
-
-    headings: {
-      anchorLinks: {
-
-      }
-    }
   },
 
   // 内容配置
@@ -99,6 +118,14 @@ export default defineNuxtConfig({
   plugins: [
   ],
 
+  icon: {
+    clientBundle: {
+      scan: true,
+      includeCustomCollections: true,
+    },
+    provider: 'iconify',
+  },
+
   // color-mode 配置
   colorMode: {
     preference: 'system',
@@ -110,5 +137,28 @@ export default defineNuxtConfig({
     classSuffix: '',
     storage: 'localStorage', // or 'sessionStorage' or 'cookie'
     storageKey: 'nuxt-color-mode'
-  }
+  },
+
+  vite: {
+    build: {
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: false, // 保留 console，只去除注释
+          drop_debugger: true,
+        },
+        format: {
+          comments: false, // 去除所有注释
+        },
+      },
+      cssMinify: true,
+    },
+    css: {
+      postcss: {
+        plugins: [
+          // CSS 注释处理
+        ]
+      }
+    }
+  },
 })
